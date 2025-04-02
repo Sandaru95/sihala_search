@@ -21,7 +21,7 @@ Install this project with python
 #### 4. Run the project
   Relevant libraries will be prompted at the commandline
 ```bash
-  cd sinhala
+  cd sihala_search
   python3 manage.py runserver
 ```
     
