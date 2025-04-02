@@ -17,8 +17,7 @@ Install this project with python
 
 #### 1. First Install Python
 #### 2. Install Python-Django
-#### 3. Install the relevant libraries
-#### 4. Run the project
+#### 3. Run the project
   Relevant libraries will be prompted at the commandline
 ```bash
   cd sihala_search
