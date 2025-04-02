@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>සිහල අන්තර්ජාලය</title>
+    {% load static %}
+    <link rel="icon" type="image/jpg" href="{% static 'search/images/brand/favicon.png' %}"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link 
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Pretty Checkbox -->
+    <link rel="stylesheet" href="{% static 'search/css/pretty_checkbox.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'search/css/main.css' %}">
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body onload="updateExtra();">
+    <!-- Top Bar -->
+    <section id="top-bar">
+        <a href="#">🔥 අපේ ගැන්සිය</a>
+        <!-- Country name -->
+        <a href="#">🇱🇰 ශ්‍රී ලංකාව</a>
+        <!-- Brand name -->
+        <a href="#">🌏 සිහල අන්තර්ජාලය</a>
+        <!-- Signin Button -->
+        <a href="{% url 'accounts:login' %}" id="top-bar-signin-btn"><i class="fas fa-user-tie"></i> ගිණුම</a>
+        <!-- Google Btn -->
+        <a href="#" id="top-bar-google-btn"><i class="fab fa-google"></i></a>
+    </section>
+    <!-- Logo Search Section -->
+    <section id="logo-search-section">
+        <img src="{% static 'search/images/brand/sri_lankan_flag_1.gif' %}" alt="Sri Lankan Search Engine">
+        <div id="logo-search-section-category">
+            <a href="{% url 'search:results' %}"><i class="fas fa-globe-asia"></i> සියල්ල</a>
+            <a href="{% url 'search:results_images' %}"><i class="fas fa-images"></i> පින්තුර</a>
+            <a href="{% url 'search:results_videos' %}"><i class="far fa-play-circle"></i> විඩියෝ</a>
+            <a href="{% url 'search:results_market' %}"><i class="fas fa-search-dollar"></i> වෙළඳපොළ</a>
+        </div>
+        <div id="search-box-wrapper">
+            <input type="text" id="search-box-input">
+            <a href="#" onclick="searchSubmission();" id="search-btn"><i class="fa fa-search"></i></a>
+        </div>
+        <div id="search-lang-wrapper">
+            <div class="pretty p-default">
+                <input id="lang-checkbox" type="checkbox" onchange="languageChange(this);">
+                <div class="state p-success">
+                    <label>සිංහල අපප්බ්‍රන්ස</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats-section">
+        <div id="weather-card">
+            <span id="weather-img">
+                <img src="{% static 'search/images/stats_section/weather/sun.jpg' %}" alt="Weather by Sri Lanka">
+            </span>
+            <div id="weather-card-left">
+                <p><span id="weather-p-temp">{{ status_object.weather_value }}</span> C</p>
+            </div>
+            <div id="weather-card-right">
+                <p><span id="weather-p-wind">13</span>Kmph</p>
+                <p><span id="weather-p-rainchance">67</span>% 🌧️</p>
+            </div>
+        </div>
+        <div id="exchange-rate-div">
+            <img src="{% static 'search/images/stats_section/exchange/dollar_rotate.jpg' %}" alt="">
+            <p>🇺🇸 1 USD</p>
+            <p>🇱🇰 <span id="exchange-rate-p">{{ status_object.rupee_value }}</span> LKR</p>
+        </div>
+        <div id="country-div">
+            <img src="{% static 'search/images/stats_section/country/sri_lanka.jpg' %}">
+            <p>ජනගහනය: <span id="population-p"></span></p>
+            <p>ජනාධිපති: අනුර කුමාර දිසානායක</p>
+        </div>
+    </section>
+    <section id="youtube-trending-section">
+        <h2>👌 නැගී එන විඩියෝ</h2>
+        {% for video in youtube_trending_list %}
+        <div class="youtube-trending-video" onclick="window.location.assign('{{ video.url }}')">
+            <img src="{{ video.thumbnail_url }}">
+            <p>{{ video.title }}</p>
+        </div>
+        {% endfor %}
+    </section>
+    <section id="hot-news-section">
+        <h2>📰 උණුසුම් පුවත්</h2>
+        {% for new in hot_news_list %}
+        <div class="news-item" onclick="window.location.assign(`http://sinhala.adaderana.lk/sinhala-hot-news.php`)">
+            <img src="{{ new.thumbnail_url }}">
+            <img class="derana-logo-every" src="{% static 'search/images/derana/brand.png' %}" alt="derana">
+            <p>{{ new.title }}</p>
+        </div>
+        {% endfor %}
+    </section>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- Custom -->
+    <script src="{% static 'search/js/main.js' %}"></script>
+</body>
+</html>

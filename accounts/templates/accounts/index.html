@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}My Account{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<br>
+<h2 class="sanda-topic-style">My Account</h2>
+<br>
+<br>
+<h4>Hi! {{ user.username }}</h4>
+<br>
+<h6>This is your user account page. In here your can modify and view your account details.</h6>
+<br>
+<pre>
+    <h5 style="margin:auto;">Username: {{ user.username }}</h5>
+    <h5 style="margin:auto;">Email: {{ user.email }}</h5>
+    <h5 style="margin:auto;">Password: This function is still on making</h5>
+</pre>
+
+<br>
+<br>
+
+{% else %}
+{% include '404_include.html' %}
+{% endif %}
+{% endblock %}

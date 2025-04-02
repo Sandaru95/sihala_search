@@ -1,0 +1,392 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p{
+    font-weight: 100;
+}
+/* ======================================== */
+/* Globals */
+.active{
+    padding-bottom: 9px;
+    border-bottom: 3px solid rgb(104, 104, 104);
+}
+/* ======================================== */
+/* a */
+a{
+    outline: none;
+}
+/* Body */
+body{
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* ============================================================ */
+/* Search Section */
+#search-section{
+    width: 96%;
+    background-color: #FAFAFA !important;
+    padding: 20px 30px 10px 30px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+}
+#search-section img{
+    width: 3.5%;
+    float: left;
+    margin-top: 5px;
+}
+#search-section input{
+    margin-left: 20px;
+    border: .5px solid lightgray;
+    border-right: 0;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 45%;
+    float: left;
+}
+#search-section a#search{
+    background-color: #fff;
+    border: .5px solid lightgray;
+    border-left: 0;
+    float: left;
+    text-decoration: none;
+    color: #2c2c2c;
+    padding: 17px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all ease-in-out 120ms;
+}
+#search-section a#search:hover{
+    background-color: #65BC46;
+    color: #fff;
+    border-color: #65BC46;
+}
+/* ================================ Top Bar Aside Buttons */
+#search-section .top-bar-btn{
+    float: right;
+    text-decoration: none;
+    color: #2c2c2c;
+    padding: 15px;
+    margin-right: 5px;
+    border-radius: 60px;
+    transition: all ease-in-out 120ms;
+}
+#search-section .top-bar-btn:hover{
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+/* Aside Google With Menu */
+#google-dropdown-btn{
+    position: relative;
+}
+/* ====== Top Bar Sign In button */
+#search-section #signin-btn{
+    background-color: #65BC46;
+    border: .5px solid lightgray;
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    width: 5%;
+    font-weight: 900;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    transition: all ease-in-out 120ms;
+}
+#search-section #signin-btn:hover{
+    background-color: #6cca4a;
+}
+/* Top Bar Foot */
+#search-section-foot{
+    width: 90%;
+    clear: both;
+    padding-left: 4%;
+    padding-top: 14px;
+}
+#search-section-foot a{
+    color: rgb(104, 104, 104);
+    text-decoration: none;
+    margin-left: 20px;
+    background-color: #fff;
+}
+/* ============================================================ */
+/* Result Display */
+#result-display{
+    width: 60%;
+    margin-top: 2.5%;
+    float: left;
+    padding-left: 6.5%;
+}
+/* Result Item */
+#result-display .market-item{
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-weight: 500;
+    border: .5px solid #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    overflow: hidden;
+    transition: all ease-in-out 140ms;
+}
+#result-display .market-item:hover{
+    border: .5px solid lightgray;
+}
+#result-display .market-item h2{
+    font-size: 20px;
+    float: left;
+    width: 75%;
+    font-weight: 500;
+    padding: 5px;
+    padding-top: 0;
+    font-weight: 1500;
+    color: #111;
+}
+#result-display .market-item img{
+    width: 19%;
+    border-radius: 5px;
+    float: left;
+}
+#result-display .market-item p{
+    font-size: 12px;
+    font-weight: 500;
+    width: 75%;
+    padding: 5px;
+    float: left;
+    color: #494949;
+}
+
+/* ================= FOOTER =============== */
+footer{
+    padding: 10px 80px;
+    font-weight: 900;
+    font-size: 18px;
+    font-family: 'Abhaya Libre';
+    clear: both;
+    border-top: .5px solid lightgray;
+    background-color: #FAFAFA;
+}
+footer img{
+    width: 5%;
+    float: left;
+}
+footer p{
+    float: left;
+    padding-top: 10px;
+    font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 479px) {
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, p{
+        font-weight: 100;
+    }
+    /* ======================================== */
+    /* Globals */
+    .active{
+        padding-bottom: 9px;
+        border-bottom: 3px solid rgb(104, 104, 104);
+    }
+    /* ======================================== */
+    /* a */
+    a{
+        outline: none;
+    }
+    /* Body */
+    body{
+        background-color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* ============================================================ */
+    /* Search Section */
+    #search-section{
+        width: 96%;
+        background-color: #FAFAFA !important;
+        padding: 20px 30px 10px 30px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    }
+    #search-section img{
+        width: 10%;
+        float: left;
+        margin-top: 5px;
+    }
+    #search-section input{
+        margin-left: 20px;
+        border: .5px solid lightgray;
+        border-right: 0;
+        padding: 15px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 45%;
+        float: left;
+    }
+    #search-section a#search{
+        background-color: #fff;
+        border: .5px solid lightgray;
+        border-left: 0;
+        float: left;
+        text-decoration: none;
+        color: #2c2c2c;
+        padding: 17px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: all ease-in-out 120ms;
+    }
+    #search-section a#search:hover{
+        background-color: #65BC46;
+        color: #fff;
+        border-color: #65BC46;
+    }
+    /* ================================ Top Bar Aside Buttons */
+    #search-section .top-bar-btn{
+        float: right;
+        text-decoration: none;
+        color: #2c2c2c;
+        padding: 15px;
+        margin-right: 5px;
+        border-radius: 60px;
+        transition: all ease-in-out 120ms;
+    }
+    #search-section .top-bar-btn:hover{
+        background-color: rgb(235, 235, 235);
+        cursor: pointer;
+    }
+    /* Aside Google With Menu */
+    #google-dropdown-btn{
+        position: relative;
+    }
+    /* ====== Top Bar Sign In button */
+    #search-section #signin-btn{
+        background-color: #65BC46;
+        border: .5px solid lightgray;
+        float: right;
+        text-decoration: none;
+        color: #fff;
+        width: 5%;
+        font-weight: 900;
+        text-align: center;
+        padding: 12px;
+        border-radius: 5px;
+        transition: all ease-in-out 120ms;
+    }
+    #search-section #signin-btn:hover{
+        background-color: #6cca4a;
+    }
+    /* Top Bar Foot */
+    #search-section-foot{
+        width: 90%;
+        clear: both;
+        padding-left: 4%;
+        padding-top: 14px;
+    }
+    #search-section-foot a{
+        color: rgb(104, 104, 104);
+        text-decoration: none;
+        margin-left: 20px;
+        background-color: #fff;
+    }
+    /* ============================================================ */
+    /* Result Display */
+    #result-display{
+        width: 90%;
+        margin-top: 2.5%;
+        float: left;
+        padding-left: 6.5%;
+    }
+    /* Result Item */
+    #result-display .market-item{
+        margin-top: 15px;
+        width: 100%;
+        cursor: pointer;
+        font-family: 'Nunito Sans', sans-serif !important;
+        font-weight: 500;
+        border: .5px solid #fff;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
+        overflow: hidden;
+        transition: all ease-in-out 140ms;
+    }
+    #result-display .market-item:hover{
+        border: .5px solid lightgray;
+    }
+    #result-display .market-item h2{
+        font-size: 20px;
+        float: left;
+        width: 100%;
+        font-weight: 500;
+        padding: 5px;
+        padding-top: 0;
+        font-weight: 1500;
+        color: #111;
+    }
+    #result-display .market-item img{
+        width: 100%;
+        border-radius: 5px;
+        float: left;
+    }
+    #result-display .market-item p{
+        font-size: 12px;
+        font-weight: 500;
+        width: 100%;
+        padding: 5px;
+        float: left;
+        color: #494949;
+    }
+
+    /* ================= FOOTER =============== */
+    footer{
+        padding: 10px 80px;
+        font-weight: 900;
+        font-size: 18px;
+        font-family: 'Abhaya Libre';
+        clear: both;
+        border-top: .5px solid lightgray;
+        background-color: #FAFAFA;
+    }
+    footer img{
+        width: 5%;
+        float: left;
+    }
+    footer p{
+        float: left;
+        padding-top: 10px;
+        font-weight: 900;
+    }
+}
