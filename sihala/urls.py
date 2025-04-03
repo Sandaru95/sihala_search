@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('search/', include('search.urls')),
     path('accounts/', include('accounts.urls')),
+    path('smail/', include('smail.urls'))
 ]

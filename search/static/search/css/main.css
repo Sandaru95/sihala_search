@@ -64,6 +64,9 @@ body{
     background-color: rgb(235, 235, 235);
     cursor: pointer;
 }
+#top-bar a#top-bar-google-btn i{
+    font-size: 22px !important;
+}
 /* ========================================= LOGO Search ================================  */
 /* ====================================================================================== */
 #logo-search-section{

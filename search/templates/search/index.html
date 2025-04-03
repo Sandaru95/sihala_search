@@ -29,9 +29,9 @@
         <!-- Brand name -->
         <a href="#">🌏 සිහල අන්තර්ජාලය</a>
         <!-- Signin Button -->
-        <a href="{% url 'accounts:login' %}" id="top-bar-signin-btn"><i class="fas fa-user-tie"></i> ගිණුම</a>
+        <a href="{% url 'accounts:login' %}" id="top-bar-signin-btn"><i class="fas fa-user-tie"></i> {% if user.is_authenticated %}Hi {{ user.username }}!{% else%}ගිණුම{% endif %}</a>
         <!-- Google Btn -->
-        <a href="#" id="top-bar-google-btn"><i class="fab fa-google"></i></a>
+        <a href="{% url 'smail:index' %}" id="top-bar-google-btn"><i class="fa fa-envelope"></i></a>
     </section>
     <!-- Logo Search Section -->
     <section id="logo-search-section">

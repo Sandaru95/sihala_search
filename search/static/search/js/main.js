@@ -15,7 +15,7 @@ $.ajax({
         weatherWindP.innerHTML = response["current"]["wind_kph"];
         // Weather Image handled here
         if(response["current"]["is_day"]){
-            weatherImage.innerHTML = "";
+            weatherImage.innerHTML = `<img src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" alt="Weather by Sri Lanka">`;
         }else{
             weatherImage.innerHTML = `<img src="https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-moon-icon-png-image_1024711.jpg" alt="Weather by Sri Lanka">`;
         }

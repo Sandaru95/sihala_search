@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["192.168.1.83"]
 # Application definition
 
 INSTALLED_APPS = [
+    'smail',
     'bot',
     'accounts',
     'search',
