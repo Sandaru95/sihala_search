@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home | Sihala Search</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Boostrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'search/css/index.css' %}">
+</head>
+
+<body style="background-image: url('/static/search/img/doodle2.png') !important;">
+    <div class="container">
+        <!-- Top Right Button -->
+        <button id="acc-button" type="button" class="btn btn-light"><i class="fa-solid fa-user"></i> ගිණුම</button>
+        <!-- Search Section -->
+        <div class="search-wrapper reels">
+            <div class="search-container">
+                <div class="position-relative mb-4" style="text-align: center;">
+                    <img src="{% static 'search/img/doodle1.jpg' %}" style="width: 35% !important;">
+                </div>
+                <div class="position-relative mb-4">
+                    <input type="text" class="form-control search-input" placeholder="සොයන්න..." autofocus>
+                    <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                </div>
+
+                <div class="search-tags d-flex flex-wrap mb-4" style="font-weight: bolder !important;">
+                    <span class="tag"><i class="fa fa-globe" aria-hidden="true"></i> සියල්ල</span>
+                    <span class="tag"><i class="fas fa-images"></i> පින්තුර</span>
+                    <span class="tag"><i class="fa-solid fa-video"></i> වීඩියෝ</span>
+                    <span class="tag"><i class="fa-solid fa-newspaper"></i> පුවත්</span>
+                    <span class="tag"><i class="fa-solid fa-truck-fast"></i> වෙළඳපොල</span>
+                </div>
+
+                <div class="recent-searches pt-3">
+                    <p class="text-muted mb-3" style="font-weight: bolder !important;">පෙරසෙවුම්</p>
+                    <div class="recent-item d-flex align-items-center">
+                        <i class="bi bi-clock-history me-2"></i>
+                        <span>Modern Web Development</span>
+                    </div>
+                    <div class="recent-item d-flex align-items-center">
+                        <i class="bi bi-clock-history me-2"></i>
+                        <span>UI/UX Best Practices</span>
+                    </div>
+                    <div class="recent-item d-flex align-items-center">
+                        <i class="bi bi-clock-history me-2"></i>
+                        <span>Bootstrap 5 Tutorial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Temperature -->
+        <div class="container reels">
+            <div class="card card-1">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="temp">31&deg;</div>
+                                    <div class="location">Colombo, Sri Lanka</div>
+                                </div>
+                                <div class="col-6 justify-content-right">
+                                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2022/06/07/13/22/weather-7248402_1280.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Currency and Population -->
+        <div class="container reels">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card card-1">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="temp">296</div>
+                                <div class="location">LKR equal 1$ (USD)</div>
+                            </div>
+                            <div class="col-6 justify-content-right">
+                                <img class="img-fluid" src="{% static 'search/img/usd.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card card-1">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="temp">22.04</div>
+                                <div class="location">Million Population</div>
+                            </div>
+                            <div class="col-6 justify-content-right">
+                                <img class="img-fluid" src="{% static 'search/img/people.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- News-->
+        <div id="news-section" class="container reels">
+            <div class="card card-1">
+                <h1 style="font-weight: bold;"><img id="news_gif" src="{% static 'search/img/news.gif' %}"> පුවත් එසැනින්</h1>
+                <div class="row">
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743749324-water-bottle-l.jpg">
+                        <p style="font-weight: bolder;">බෝතල්කළ පානීය ජලය සඳහා උපරිම සිල්ලර මිලක්</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743750529-aluth-sahal-l.jpg">
+                        <p style="font-weight: bolder;">අලුත් සහල් මංගල්‍යය ජනපති ප්‍රධානත්වයෙන් අනුරාධපුරයේ දී</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743747472-anthare-l.jpg">
+                        <p style="font-weight: bolder;">අන්තරේ කැඳවුම්කරු හා තවත් අයෙක්ට ඇප</p>
+                    </div>
+                </div>
+                <!-- 2nd Row -->
+                <div class="row">
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743740490-yoshitha-L.jpg">
+                        <p style="font-weight: bolder;">යෝෂිත හා ඩේසි ආච්චිට අධි චෝදනා</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743735903-south-koria-L.jpg">
+                        <p style="font-weight: bolder;">දකුණු කොරියානු ජනපති ඉවතට‍</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743733859-election.jpg">
+                        <p style="font-weight: bolder;">අවුරුදු සහන මල්ලට මැතිවරණ කොමිසමෙන් වාරණයක්</p>
+                    </div>
+                </div>
+                <!-- 3rd Row -->
+                <div class="row">
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743744950-court-oder-l.jpg">
+                        <p style="font-weight: bolder;">ප්‍රතික්ෂේප කළ නාමයෝජනා භාරගන්නැයි අභියාචනාධිකරණයෙන් නියෝගයක්</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743744530-police-new-image-L.jpg">
+                        <p style="font-weight: bolder;">මැතිවරණ කොමිසමෙන් පොලීසියට උපදෙස්</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743742612-Homagama-girl.jpg">
+                        <p style="font-weight: bolder;">දැරියක් දූෂණය කළ බව කියන 7ක් අත්අඩංගුවට</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Trending Videos-->
+        <div id="trending-section" class="container reels">
+            <div class="card card-1">
+                <h1 style="font-weight: bold;"><img id="fire_gif" src="{% static 'search/img/fire.gif' %}"> නැගී එන වීඩියෝ</h1>
+                <div class="row">
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/WjHtqfuStoY/maxresdefault.jpg">
+                        <p style="font-weight: bolder;">Maliga (මාලිගා) - Big Doggy x Smokio x Dilo (Official Music Video)</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/yG2MoXdFB34/sddefault.jpg">
+                        <p style="font-weight: bolder;">KANIMAA Lyrical Video - RETRO | Suriya | Karthik Subbaraj | Pooja Hegde</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/1seR_ckLXz4/maxresdefault.jpg">
+                        <p style="font-weight: bolder;">Golden Sparrow - Video Song | Dhanush | Priyanka Mohan | Pavish | Anikha | GV Prakash #NEEK</p>
+                    </div>
+                </div>
+                <!-- 2nd Row -->
+                <div class="row">
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/h4WW_nnPsPU/maxresdefault.jpg">
+                        <p style="font-weight: bolder;">Zany Inzane - Swara ස්වර ( Sunna 2 )</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/Nu2pLnm450o/maxresdefault.jpg">
+                        <p style="font-weight: bolder;">Yedi - Video Song | Dhanush | Pavish | Anikha | GV Prakash | Jonita Gandhi #NEEK</p>
+                    </div>
+                    <div class="col-sm card">
+                        <img src="https://img.youtube.com/vi/QErjhElWhZI/maxresdefault.jpg">
+                        <p style="font-weight: bolder;">Man Bolanda Wiye (මං බොළඳ වියේ) | Shirley Waijayantha | Flashback Official</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"><img src="{% static 'search/img/flag.gif' %}"><h4>හදවතින්ම ශ්‍රී ලාංකිකයි</h4></div>
+    <!-- Container Ends Here -->
+    <!-- Reveal JS -->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <script>ScrollReveal().reveal('.reels');</script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
