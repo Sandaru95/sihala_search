@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+/* ======================================== */
+/* Globals */
+.active{
+    padding-bottom: 9px;
+    border-bottom: 3px solid rgb(104, 104, 104);
+}
+/* Search  */
+.search-wrapper {
+    /* background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); */
+    /* background: linear-gradient(125.8deg, rgba(245,247,250,1) 6.8%, rgba(184,198,219,1) 59.5%); */
+    min-height: 10vh;
+    display: flex;
+    padding-top: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.search-container {
+    background: rgba(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    padding-bottom: 0;
+    width: 100%;
+}
+.search-container img{
+    width: 20% !important;
+    display: inline-block;
+}
+.search-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.search-tags {
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: #6366f1;
+    color: white;
+    cursor: pointer;
+}
+/* ======================================== */
+/* a */
+a{
+    outline: none;
+}
+/* Body */
+body{
+    background-color: #fff;
+    overflow-x: hidden;
+}
+/* ======================================== Temperature Cards */
+.card{
+    margin-top: 20px;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 1.5rem;
+    border-color: rgba(238, 237, 237, 0.438);
+    box-shadow: 5px 8px 10px #80808033;
+}
+@media(max-width:767px){
+    .card{
+        height: 10rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+}
+.carousel-indicators li {
+    width: 5px;
+    height: 6px;
+    border-radius: 100%;
+    opacity: 0.2;
+    background-color: #000000;
+}
+.carousel-indicators{
+    margin-bottom: 0;
+}
+.temp{
+    font-size: 5rem;
+    color: rgb(57, 57, 58);
+}
+.card-1{
+    background: linear-gradient(to right, #ffffff 50%, rgba(241, 224, 190, 0.507));
+}
+@media(max-width:767px)
+{
+    .temp{
+        font-size: 3rem;
+    }
+}
+.location{
+    margin-bottom: 1.5rem;
+}
+@media(max-width:767px)
+{
+    .location{
+        font-size: 0.75rem;
+    }
+}
+.img-fluid{
+    float: right;
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+.row2 .img-fluid{
+    margin: 10% 0;
+    opacity: 0.5;
+    width: 40%;
+}
+.card-2 .row{
+    justify-content: center;
+}
+.card-3 .row{
+    justify-content: center;
+}
+.row1{
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: black;
+}
+.row3{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: black;
+}
+@media(max-width:400px)
+{
+    .row3{
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: black;
+    }
+}
+@media(max-width:320px)
+{
+    .row3{
+        font-size: 0.6rem;
+        font-weight: bold;
+        color: black;
+    }
+}
+.row4{
+    font-size: 0.6rem;
+    color: rgb(196, 196, 196);
+    margin: 5% 0 2.5rem;
+}
+.card-3 .row3{
+    margin: 5% 0 2.5rem;
+}
+.col{
+    overflow: visible;
+}
+.row{
+    overflow: visible;
+}
+/* Typewritter Effect For Search Loading Title */
+.typewriter{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 20% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #6366f1; }
+  }

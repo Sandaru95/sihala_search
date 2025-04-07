@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'search/css/index.css' %}">
+
 </head>
 
 <body style="background-image: url('/static/search/img/doodle2.png') !important;">
@@ -29,7 +30,7 @@
                     <img src="{% static 'search/img/doodle1.jpg' %}" style="width: 35% !important;">
                 </div>
                 <div class="position-relative mb-4">
-                    <input type="text" class="form-control search-input" placeholder="සොයන්න..." autofocus>
+                    <input id="search-box" spellcheck="false" type="text" class="form-control search-input" placeholder="සොයන්න..." autofocus>
                     <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
                 </div>
 
@@ -43,18 +44,20 @@
 
                 <div class="recent-searches pt-3">
                     <p class="text-muted mb-3" style="font-weight: bolder !important;">පෙරසෙවුම්</p>
-                    <div class="recent-item d-flex align-items-center">
-                        <i class="bi bi-clock-history me-2"></i>
-                        <span>Modern Web Development</span>
-                    </div>
-                    <div class="recent-item d-flex align-items-center">
-                        <i class="bi bi-clock-history me-2"></i>
-                        <span>UI/UX Best Practices</span>
-                    </div>
-                    <div class="recent-item d-flex align-items-center">
-                        <i class="bi bi-clock-history me-2"></i>
-                        <span>Bootstrap 5 Tutorial</span>
-                    </div>
+                    <span id="recent-search-span">
+                        <div class="recent-item d-flex align-items-center">
+                            <i class="bi bi-clock-history me-2"></i>
+                            <span>Modern Web Development</span>
+                        </div>
+                        <div class="recent-item d-flex align-items-center">
+                            <i class="bi bi-clock-history me-2"></i>
+                            <span>UI/UX Best Practices</span>
+                        </div>
+                        <div class="recent-item d-flex align-items-center">
+                            <i class="bi bi-clock-history me-2"></i>
+                            <span>Bootstrap 5 Tutorial</span>
+                        </div>
+                    </span>
                 </div>
             </div>
         </div>
@@ -67,7 +70,7 @@
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="col-6">
-                                    <div class="temp">31&deg;</div>
+                                    <div class="temp"><span id="weather-p-temp">31</span>&deg;</div>
                                     <div class="location">Colombo, Sri Lanka</div>
                                 </div>
                                 <div class="col-6 justify-content-right">
@@ -87,7 +90,7 @@
                     <div class="card card-1">
                         <div class="row">
                             <div class="col-6">
-                                <div class="temp">296</div>
+                                <div class="temp"><span id="exchange-rate-p">296</span></div>
                                 <div class="location">LKR equal 1$ (USD)</div>
                             </div>
                             <div class="col-6 justify-content-right">
@@ -100,7 +103,7 @@
                     <div class="card card-1">
                         <div class="row">
                             <div class="col-6">
-                                <div class="temp">22.04</div>
+                                <div class="temp"><span id="population-p">22.04</span></div>
                                 <div class="location">Million Population</div>
                             </div>
                             <div class="col-6 justify-content-right">
@@ -115,7 +118,7 @@
         <div id="news-section" class="container reels">
             <div class="card card-1">
                 <h1 style="font-weight: bold;"><img id="news_gif" src="{% static 'search/img/news.gif' %}"> පුවත් එසැනින්</h1>
-                <div class="row">
+                <div class="row" id="news-col-1">
                     <div class="col-sm card">
                         <img src="https://s3.amazonaws.com/adaderanasinhala/1743749324-water-bottle-l.jpg">
                         <p style="font-weight: bolder;">බෝතල්කළ පානීය ජලය සඳහා උපරිම සිල්ලර මිලක්</p>
@@ -127,36 +130,6 @@
                     <div class="col-sm card">
                         <img src="https://s3.amazonaws.com/adaderanasinhala/1743747472-anthare-l.jpg">
                         <p style="font-weight: bolder;">අන්තරේ කැඳවුම්කරු හා තවත් අයෙක්ට ඇප</p>
-                    </div>
-                </div>
-                <!-- 2nd Row -->
-                <div class="row">
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743740490-yoshitha-L.jpg">
-                        <p style="font-weight: bolder;">යෝෂිත හා ඩේසි ආච්චිට අධි චෝදනා</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743735903-south-koria-L.jpg">
-                        <p style="font-weight: bolder;">දකුණු කොරියානු ජනපති ඉවතට‍</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743733859-election.jpg">
-                        <p style="font-weight: bolder;">අවුරුදු සහන මල්ලට මැතිවරණ කොමිසමෙන් වාරණයක්</p>
-                    </div>
-                </div>
-                <!-- 3rd Row -->
-                <div class="row">
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743744950-court-oder-l.jpg">
-                        <p style="font-weight: bolder;">ප්‍රතික්ෂේප කළ නාමයෝජනා භාරගන්නැයි අභියාචනාධිකරණයෙන් නියෝගයක්</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743744530-police-new-image-L.jpg">
-                        <p style="font-weight: bolder;">මැතිවරණ කොමිසමෙන් පොලීසියට උපදෙස්</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://s3.amazonaws.com/adaderanasinhala/1743742612-Homagama-girl.jpg">
-                        <p style="font-weight: bolder;">දැරියක් දූෂණය කළ බව කියන 7ක් අත්අඩංගුවට</p>
                     </div>
                 </div>
             </div>
@@ -199,9 +172,13 @@
     </div>
     <div id="footer"><img src="{% static 'search/img/flag.gif' %}"><h4>හදවතින්ම ශ්‍රී ලාංකිකයි</h4></div>
     <!-- Container Ends Here -->
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <!-- Reveal JS -->
     <script src="https://unpkg.com/scrollreveal@4"></script>
     <script>ScrollReveal().reveal('.reels');</script>
+    <!-- Custom JS -->
+    <script src="{% static 'search/js/index.js' %}"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
