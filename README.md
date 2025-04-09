@@ -2,7 +2,7 @@
 ![Logo](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSrCg3A5aXOYeRFe1o25-KzDSpQ1XxX4p91OKr-6nLUSJ4XnJ1d)
 
 
-# Sinhala Search
+#  Sinhala Search
 
 Localized Search Engine For Sri Lankans with Additional Local Services
 
