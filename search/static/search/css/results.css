@@ -175,6 +175,10 @@ body{
 .row{
     overflow: visible;
 }
+/* YT */
+.yt-vid img{
+    width: 200px !important;
+}
 /* Typewritter Effect For Search Loading Title */
 .typewriter{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -198,3 +202,4 @@ body{
     from, to { border-color: transparent }
     50% { border-color: #6366f1; }
   }
+

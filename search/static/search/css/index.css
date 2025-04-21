@@ -183,6 +183,9 @@
 #news-section p{
     text-decoration: underline;
 }
+#news-section h1{
+    font-weight: bold;
+}
 #news_gif{
     width: 10% !important;
 }
@@ -194,6 +197,9 @@
 }
 #trending-section p{
     text-decoration: underline;
+}
+#trending-section h1{
+    font-weight: bold;
 }
 #fire_gif{
     width: 10% !important;

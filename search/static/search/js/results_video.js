@@ -1,46 +1,34 @@
 const searchBox = document.getElementById("search-box");
-
-// General functions: navigateTo
-function navigateTo(url){
-    console.log("At navigateTo Function");
-    window.location.assign(url);
-};
-
+const APIKey = "AIzaSyCJ3rNUHH8wZwjXrIegsV2hGOI6xn2zWX0";
 // On Load: Load Searched Value
 let search_term = localStorage.getItem("search_term");
 searchBox.value = search_term;
 
 /* Function for searching and updating the search results list */
 function getSearchResultsAndUpdate(search_term){
+    console.log("we are here");
     const settings = {
         async: true,
         crossDomain: true,
-        url: `https://searx-search-api.p.rapidapi.com/search?q=${search_term}&format=json`,
+        url: `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${search_term}&key=${APIKey}`,
         method: 'GET',
-        headers: {
-            'x-rapidapi-key': '14c4d469c4msh1ea868cafe9c788p1546cajsn40fbf288a511',
-            'x-rapidapi-host': 'searx-search-api.p.rapidapi.com'
-        }
+        headers: {"Accept": "application/json"}
     };
     $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-    
-    $.ajax(settings).done(function (response) {
-        if(localStorage['search_response_obj']){
-            delete localStorage['search_response_obj'];
-        };
         /* Reponse Got For Search Keyword */
-        let responseObj = response.results;
+        let responseObj = response.items;
+        // console.log(responseObj)
         // ====================================== UPDATING ==================================
         let tempView = ``;
         /* Adding New Results One By One */
         responseObj.forEach((element) => {
+            console.log(element);
             tempView += `
-                <div class="card card-1 reels">
-                    <h3>${element.title}</h3>
-                    <a href="${element.url}">${element.url}</a>
-                    <p>${element.content.slice(0,500)}</p>
+                <div class="card card-1 reels yt-vid">
+                    <img src="${element['snippet']['thumbnails']['high']['url']}">
+                    <h3>${element['snippet']['title']}</h3>
+                    <a href="https://www.youtube.com/watch?v=${element['id']['videoId']}">https://www.youtube.com/watch?v=${element['id']['videoId']}z</a>
+                    <p>${element['snippet']['description']}</p>
                 </div>
             `;
         });

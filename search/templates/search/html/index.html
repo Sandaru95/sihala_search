@@ -37,7 +37,7 @@
                 <div class="search-tags d-flex flex-wrap mb-4" style="font-weight: bolder !important;">
                     <span class="tag"><i class="fa fa-globe" aria-hidden="true"></i> සියල්ල</span>
                     <span class="tag"><i class="fas fa-images"></i> පින්තුර</span>
-                    <span class="tag"><i class="fa-solid fa-video"></i> වීඩියෝ</span>
+                    <span class="tag" onclick="navigateTo('/search/results_video/')"><i class="fa-solid fa-video"></i> වීඩියෝ</span>
                     <span class="tag"><i class="fa-solid fa-newspaper"></i> පුවත්</span>
                     <span class="tag"><i class="fa-solid fa-truck-fast"></i> වෙළඳපොල</span>
                 </div>
@@ -117,7 +117,7 @@
         <!-- News-->
         <div id="news-section" class="container reels">
             <div class="card card-1">
-                <h1 style="font-weight: bold;"><img id="news_gif" src="{% static 'search/img/news.gif' %}"> පුවත් එසැනින්</h1>
+                <h1><img id="news_gif" src="{% static 'search/img/news.gif' %}"> පුවත් එසැනින්</h1>
                 <div class="row" id="news-col-1">
                     <div class="col-sm card">
                         <img src="https://s3.amazonaws.com/adaderanasinhala/1743749324-water-bottle-l.jpg">
@@ -137,35 +137,14 @@
         <!-- Trending Videos-->
         <div id="trending-section" class="container reels">
             <div class="card card-1">
-                <h1 style="font-weight: bold;"><img id="fire_gif" src="{% static 'search/img/fire.gif' %}"> නැගී එන වීඩියෝ</h1>
+                <h1><img id="fire_gif" src="{% static 'search/img/fire.gif' %}"> නැගී එන වීඩියෝ</h1>
                 <div class="row">
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/WjHtqfuStoY/maxresdefault.jpg">
-                        <p style="font-weight: bolder;">Maliga (මාලිගා) - Big Doggy x Smokio x Dilo (Official Music Video)</p>
+                    {% for video in yt_videos %}
+                    <div class="card" style="width: 30%;">
+                        <img src="{{ video.thumbnail }}">
+                        <p style="font-weight: bolder;">{{ video.title }}</p>
                     </div>
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/yG2MoXdFB34/sddefault.jpg">
-                        <p style="font-weight: bolder;">KANIMAA Lyrical Video - RETRO | Suriya | Karthik Subbaraj | Pooja Hegde</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/1seR_ckLXz4/maxresdefault.jpg">
-                        <p style="font-weight: bolder;">Golden Sparrow - Video Song | Dhanush | Priyanka Mohan | Pavish | Anikha | GV Prakash #NEEK</p>
-                    </div>
-                </div>
-                <!-- 2nd Row -->
-                <div class="row">
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/h4WW_nnPsPU/maxresdefault.jpg">
-                        <p style="font-weight: bolder;">Zany Inzane - Swara ස්වර ( Sunna 2 )</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/Nu2pLnm450o/maxresdefault.jpg">
-                        <p style="font-weight: bolder;">Yedi - Video Song | Dhanush | Pavish | Anikha | GV Prakash | Jonita Gandhi #NEEK</p>
-                    </div>
-                    <div class="col-sm card">
-                        <img src="https://img.youtube.com/vi/QErjhElWhZI/maxresdefault.jpg">
-                        <p style="font-weight: bolder;">Man Bolanda Wiye (මං බොළඳ වියේ) | Shirley Waijayantha | Flashback Official</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

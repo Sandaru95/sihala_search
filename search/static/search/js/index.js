@@ -5,6 +5,11 @@ const searchBox = document.getElementById("search-box");
 const recentSearchSpan = document.getElementById("recent-search-span");
 const newsCol1 = document.getElementById("news-col-1");
 
+// General functions: navigateTo
+function navigateTo(url){
+    window.location.assign(url);
+};
+
 // On Load: Currency Rates
 $.ajax({
     url: 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json',
